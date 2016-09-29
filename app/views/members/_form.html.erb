@@ -1,0 +1,5 @@
+<%= simple_form_for(@member) do |f| %>
+    <%= f.input :name, placeholder: "Full Name" %>
+    <%= f.input :email, placeholder: "bob@bob.com" %>
+    <%= f.button :submit, class: "btn btn-primary"  %>
+<% end %>

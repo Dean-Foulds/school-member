@@ -1,0 +1,24 @@
+<h1 class="text-center">Member list</h1>
+
+<div class="text-center padded">
+  <%= link_to "Create a new member", new_member_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @members.each do |member| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+
+          <div class="card-body">
+            <%= link_to member.name, member_path(member) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= @member.name %></h1>
+      <%= link_to 'Back to member index', members_path, class: "btn btn-primary" %>
+
+      <ul>
+        <% @member.partnerships.each do |partnership| %>
+          <li>
+            <%= link_to partnership.school.name, school_path(partnership.school) %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= simple_form_for [@member, @partnership] do |f| %>
+        <%= f.input :school_id, collection: School.all, prompt: "Choose school" %>
+        <%= f.submit "Add school", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>
